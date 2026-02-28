@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CartButton from "../buttons/CartButton";
 
 const FoodCard = ({ food }) => {
   const { id, title, foodImg, price, category } = food;
@@ -32,14 +33,12 @@ const FoodCard = ({ food }) => {
         </div>
 
         {/* Buttons */}
-        <div className="flex gap-2">
-          <button className="btn-primary flex-1 text-xs py-2">
-            Add to Cart
-          </button>
+        <div className="flex gap-2 justify-between w-full">
+          <CartButton food={food}></CartButton>
 
           <Link
             href={`/foods/${id}`}
-            className="btn-secondary transition duration-300"
+            className="btn-secondary transition duration-300 w-1/2"
           >
             View Details
           </Link>
